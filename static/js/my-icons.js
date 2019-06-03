@@ -5,13 +5,6 @@
     markerColor: "black",
     prefix: "fa"
   });
-
-  var restaurantsIcon = L.ExtraMarkers.icon({
-    icon: "fa-utensils",
-    iconColor: "white",
-    markerColor: "black",
-    prefix: "fa"
-  });
    
   var theatreIcon = L.ExtraMarkers.icon({
     icon: "fa-grin-hearts",
