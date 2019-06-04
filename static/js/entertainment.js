@@ -29,7 +29,7 @@ d3.json(boundaryURL, function(boundaryData) {
       30.2672, -97.7431
     ],
     zoom: 11,
-    layers: [streetmap, boundary]
+    layers: [streetmap,boundary]
   });
 
 
