@@ -1,11 +1,15 @@
-boundaryURL = "https://raw.githubusercontent.com/qanhdang96/master/db/boundaries.geojson"
-zipcodesURL = "https://raw.githubusercontent.com/qanhdang96/master/db/zipcodes.geojson"
-NightclubURL = "https://raw.githubusercontent.com/qanhdang96/master/db/pub_point.geojson"
-museumURL = "https://raw.githubusercontent.com/qanhdang96/master/db/museum_point.geojson"
-theatreURL = "https://raw.githubusercontent.com/qanhdang96/master/db/theatres.geojson"
+boundaryURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/boundaries.geojson"
+zipcodesURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/zipcodes.geojson"
+NightclubURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/pub_point.geojson"
+museumURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/museum_point.geojson"
+theatreURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/theatres.geojson"
 
 var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?" +
-    "access_token=pk.eyJ1IjoicWFuaGRhbmc5NiIsImEiOiJjanZvaG5kdXcxeXk0NDN1aW85eXpqa3NnIn0.PdZBCbzVJ9iM-Au8hD_jsg");
+    "access_token=pk.eyJ1IjoicWFuaGRhbmc5NiIsImEiOiJjanZvaG5kdXcxeXk0NDN1aW85eXpqa3NnIn0.PdZBCbzVJ9iM-Au8hD_jsg",
+    {
+            attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+            maxZoom: 18,
+            id: "mapbox.streets"});
 
 var baseMaps = {
   "Street Map": streetmap,
