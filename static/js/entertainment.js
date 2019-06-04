@@ -1,5 +1,5 @@
 boundaryURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/boundaries.geojson"
-zipcodesURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/zipcodes.geojson"
+zipcodesURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/zip-codes.geojson"
 NightclubURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/pub_point.geojson"
 museumURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/museum_point.geojson"
 theatreURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/theatres.geojson"
@@ -18,7 +18,7 @@ var baseMaps = {
 d3.json(boundaryURL, function(boundaryData) {
   var boundary = L.geoJSON(boundaryData, {
         onEachFeature: function (feature, layer) {
-    var marker1 = layer.bindPopup('<h1>Austin, TX </h1><h3>Mayor: Steve </h3><h3>Population: 950,715</h3><h3>Area: '+feature.properties.AREAMILES+' Square Miles</h3><h3><a href='+feature.properties.WEB_URL+' target="_blank">Discover Austin</a></h3>');
+          var marker1 = layer.bindPopup('<h1>Austin, TX </h1><h3>Mayor: Steve Adler </h3><h3>Population: 950,715</h3><h3>Area: '+feature.properties.shape_area+' Square Miles</h3>');
     marker1.on('click', function (event) {
   this.openPopup();
 });
@@ -42,7 +42,7 @@ d3.json(zipcodesURL, function(zipcodeData) {
       };
     },
   onEachFeature: function (feature, layer) {
-    var marker5 = layer.bindPopup('<h3>'+feature.properties.ZIPCODE+'</h3><h4>'+feature.properties.NAME+'</h4>');
+    var marker5 = layer.bindPopup('<h3>'+feature.properties.zipcode+'</h3><h4>'+feature.properties.name+'</h4>');
     marker5.on('mouseover', function (event) {
   this.openPopup();
   layer = event.target
