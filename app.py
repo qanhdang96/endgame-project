@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, send_file, jsonify
 from flask_pymongo import pymongo
 from functions import getRidOfId
 import time
-from nightlifetweets import getTweets
+import tweets
 import os
 
 app = Flask(__name__)
@@ -22,18 +22,12 @@ def show_map():
 
     return send_file('templates/aus_map.html')
 
-@app.route('/grabtweets')
+@app.route("/grabtweets")
 def grabtweets():
-    
-    nighttweets = getTweets()
-
-    for x in nighttweets:
-        mongo.db.nightlife.replace_one(x, x, upsert=True)
-    print('tweets added')
-    time.sleep(3)
-
-    tweets = getRidOfId(mongo.db.nightlife.find())
-    return jsonify(tweets)
+    tweets_info = client.db.tweets_info
+    tweets_data = tweets.scrape_tweets()
+    tweets_info.update({}, tweets_data, upsert=True)
+    return redirect("/", code=302)
 
 
 @app.route('/templates/tweets.html')
