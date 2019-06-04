@@ -89,7 +89,7 @@ d3.json(museumURL, function(MuseumData) {
 
 
 d3.json(theatreURL, function(theatreData) {
-  var theatres = L.geoJSON(TheatreData, {
+  var theatres = L.geoJSON(theatreData, {
     pointToLayer: function(feature, latlng) {
       return L.marker(latlng, {icon: theatreIcon})
     },
@@ -109,6 +109,8 @@ d3.json(theatreURL, function(theatreData) {
   }
 
   L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(myMap);
+})
+})
 })
 })
 })
