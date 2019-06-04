@@ -55,6 +55,7 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#map">Austin Map</a></li>
                         <li><a href="#bars">Night Bars</a></li>
+                        <li><a href="#tweet"> Tweets Update </a></li>
                         <li><a href="https://public.tableau.com/profile/quynh.tran2421#!/vizhome/AustinCrimeRate/Story1?publish=yes" target="_blank">Crimes</a></li>
                     </ul>
                 </div>
@@ -147,10 +148,11 @@
             </div>
         </div>
          
-                <div id="bars" class="tweets">
+                <div class="map-info">
                     <h3>Young Austinites Love 6th Street </h3>
                     <p>Culture collides on the wild streets of Texas' hippest city. Whether you want to rub elbows with political big wigs at Cloak Room or party with hipsters on Rainey Street, Austin has a haunt for you. (Best Bars in America)</p>
-                    <div class="iframeContainer tweetsframe">
+                    <div id="map" class="map mapframe">
+                    <div class="iframeContainer">
                         <div class="embed-responsive embed-responsive-21by9 iframe-parent">
                             <iframe class="embed-responsive-item iframe-child" src="{{ url_for('show_ent') }}" allowfullscreen></iframe>
                         </div>
@@ -159,6 +161,16 @@
                         <a href="#bars" class="btn" id="liqBtn">Map</a>
                     </div>   
                 </div>
+
+                <div id="tweet" class="tweets">
+                    <h3> Tweets Update </h3>
+                    <a class="twitter-timeline" href="https://twitter.com/austintexasgov?ref_src=twsrc%5Etfw">Tweets by austintexasgov</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <div class="iframeContainer tweetsframe"> 
+                    <div>
+                        <a href="#tweet" class="btn" id="tweetBtn"></a>
+                    </div>
+
+                    </div>
             </article>
                             
         </div>
