@@ -43,6 +43,7 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#map">Austin Map</a></li>
                         <li><a href="#bars">Night Bars</a></li>
+                        <li><a href="#">Crimes</a></li>
                         
                     </ul>
                 </div>
@@ -68,21 +69,7 @@
                         <a href="#map" class="btn" id="mapsBtn">Expand</a>
                     </div>    
                 </div>
-                <div id="sport" class="sports">
-                    <div class="iframeContainer">
-                        <div id="parent" class="embed-responsive embed-responsive-16by9">
-                            <iframe id="sportgraph" class="embed-responsive-item" src="{{ url_for('show_sports') }}" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="buttons-under">
-                        <div>
-                            <a href="#sport" class="btn" id="sportsBtn">Expand</a>
-                        </div>
-                        <div>
-                            <a href="#sport" class="btn" id="entBtn">Map</a>
-                        </div>
-                    </div>
-                </div>
+                
          
                 <div id="bars" class="tweets">
                     <h3>Young Austinies love 6th street.</h3>
@@ -99,34 +86,12 @@
             </article>
 
             <footer>
-                <p>All rights reserved</p>
+                <p>All rights reserved | UT AUSTIN CODING BOOTCAMP 2019 </p>
             </footer>
                             
         </div>
 
-        <!-- UGLY code goes here. should be turned into a modal rendering function.. one day -->
         <!-- MODALS-------------------------- -->
-        <div id="sports-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog sport modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span>Capitals and Texas</span>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="embed-responsive embed-responsive-16by9">
-                        <!-- <iframe src="{{ url_for('show_sports') }}" style="zoom:1" width="760" height='400' frameborder="0"></iframe> -->
-                        <iframe src="{{ url_for('show_sports') }}" style="zoom:1" frameborder="2"></iframe>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div id="maps-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog map modal-lg modal-dialog-centered">
@@ -173,7 +138,6 @@
                 </div>
             </div>
         </div>
-
         <div id="liq-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog liq modal-lg modal-dialog-centered">
                 <div class="modal-content">
@@ -194,6 +158,7 @@
                 </div>
             </div>
         </div>
-
+        
+        <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
     </body>
 </html>
