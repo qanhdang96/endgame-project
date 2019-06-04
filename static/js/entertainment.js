@@ -27,7 +27,7 @@ d3.json(boundaryURL, function(boundaryData) {
 
   var myMap = L.map("map", {
     center: [
-      38.9, -77
+      30.2672, -97.7431
     ],
     zoom: 11,
     layers: [streetmap, boundary]
@@ -69,7 +69,7 @@ d3.json(NightclubURL, function(NightclubData) {
       return L.marker(latlng, {icon: nightclubsIcon})
     },
     onEachFeature: function (feature, layer) {
-   layer.bindPopup('<h3>'+feature.properties.TRADE_NAME+'</h3><h4>'+feature.properties.ADDRESS+'</h4><h4>License Type: '+feature.properties.TYPE+'</h4>');
+   layer.bindPopup('<h3>'+feature.properties.name+'</h3><h4>'+feature.properties.addr+'</h4><h4>License Type: '+feature.properties.amenity+'</h4>');
      }
     })  
   var NightclubGroup = L.markerClusterGroup();
@@ -81,7 +81,7 @@ d3.json(museumURL, function(MuseumData) {
       return L.marker(latlng, {icon: museumIcon})
     },
     onEachFeature: function (feature, layer) {
-   layer.bindPopup('<h3>'+feature.properties.TRADE_NAME+'</h3><h4>'+feature.properties.ADDRESS+'</h4><h4>License Type: '+feature.properties.TYPE+'</h4>');
+   layer.bindPopup('<h3>'+feature.properties.name+'</h3><h4>'+feature.properties.addr+'</h4><h4>License Type: '+feature.properties.tourism+'</h4>');
      }
     })  
   var MuseumGroup = L.markerClusterGroup();
@@ -89,12 +89,12 @@ d3.json(museumURL, function(MuseumData) {
 
 
 d3.json(theatreURL, function(theatreData) {
-  var theatres = L.geoJSON(TheatreData, {
+  var theatres = L.geoJSON(theatreData, {
     pointToLayer: function(feature, latlng) {
       return L.marker(latlng, {icon: theatreIcon})
     },
     onEachFeature: function (feature, layer) {
-   layer.bindPopup('<h3>'+feature.properties.TRADE_NAME+'</h3><h4>'+feature.properties.ADDRESS+'</h4><h4>License Type: '+feature.properties.TYPE+'</h4>');
+   layer.bindPopup('<h3>'+feature.properties.name+'</h3><h4>'+feature.properties.addr+'</h4><h4>License Type: '+feature.properties.amenity+'</h4>');
      }
     })  
   var TheatreGroup = L.markerClusterGroup();
@@ -109,6 +109,8 @@ d3.json(theatreURL, function(theatreData) {
   }
 
   L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(myMap);
+})
+})
 })
 })
 })
