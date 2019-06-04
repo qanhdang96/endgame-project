@@ -1,5 +1,4 @@
 boundaryURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/boundaries.geojson"
-zipcodesURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/zip-codes.geojson"
 NightclubURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/pub_point.geojson"
 museumURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/museum_point.geojson"
 theatreURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/theatres.geojson"
@@ -33,35 +32,6 @@ d3.json(boundaryURL, function(boundaryData) {
     layers: [streetmap, boundary]
   });
 
-d3.json(zipcodesURL, function(zipcodeData) {
-  var zipcode = L.geoJSON(zipcodeData, {
-        style: function(feature) {
-      return {
-        // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
-        color: "green"
-      };
-    },
-  onEachFeature: function (feature, layer) {
-    var marker5 = layer.bindPopup('<h3>'+feature.properties.zipcode+'</h3><h4>'+feature.properties.name+'</h4>');
-    marker5.on('mouseover', function (event) {
-  this.openPopup();
-  layer = event.target
-  layer.setStyle({
-    fillOpacity: 0.8
-  })
-});
-marker5.on('mouseout', function (event) {
-  this.closePopup();
-  layer = event.target
-  layer.setStyle({
-    fillOpacity: 0.2
-  })
-});
-        marker5.on('click', function(event) {
-          myMap.fitBounds(event.target.getBounds());
-        })
-      }
-  })
 
 d3.json(NightclubURL, function(NightclubData) {
   var nightclubs = L.geoJSON(NightclubData, {
@@ -102,7 +72,6 @@ d3.json(theatreURL, function(theatreData) {
 
   var overlayMaps = {
     "Austin Boundary": boundary,
-    "Austin Zipcodes": zipcode,
     "Austin Nightclubs": NightclubGroup,
     "Austin Museum": MuseumGroup,
     "Austin Theatre": TheatreGroup
@@ -113,4 +82,4 @@ d3.json(theatreURL, function(theatreData) {
 })
 })
 })
-})
+

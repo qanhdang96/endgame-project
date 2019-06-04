@@ -1,3 +1,4 @@
+mapURL = "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/austin.geojson"
 boundaryURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/boundaries.geojson"
 zipcodesURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/zip-codes.geojson"
 
@@ -22,12 +23,25 @@ d3.json(boundaryURL, function(boundaryData) {
   }
 })
 
+d3.json(mapURL, function(mapData) {
+  var map = L.geoJSON(mapData, {
+        style: function(feature){
+          return {color: "red"};
+        },
+        onEachFeature: function (feature, layer) {
+    var marker2 = layer.bindPopup('<h1>Austin, TX </h1><h3>Name: '+feature.properties.name+'</h3>');
+    marker2.on('click', function (event) {
+  this.openPopup();
+});
+  }
+})
+
   var myMap = L.map("map", {
     center: [
       30.2672, -97.7431
     ],
     zoom: 11,
-    layers: [streetmap, boundary]
+    layers: [streetmap, map]
   });
 
 d3.json(zipcodesURL, function(zipcodeData) {
@@ -39,32 +53,34 @@ d3.json(zipcodesURL, function(zipcodeData) {
       };
     },
   onEachFeature: function (feature, layer) {
-    var marker5 = layer.bindPopup('<h3>'+feature.properties.zipcode+'</h3><h4>'+feature.properties.name+'</h4>');
-    marker5.on('mouseover', function (event) {
+    var marker3 = layer.bindPopup('<h3>'+feature.properties.zipcode+'</h3><h4>'+feature.properties.name+'</h4>');
+    marker3.on('mouseover', function (event) {
   this.openPopup();
   layer = event.target
   layer.setStyle({
     fillOpacity: 0.8
   })
 });
-marker5.on('mouseout', function (event) {
+marker3.on('mouseout', function (event) {
   this.closePopup();
   layer = event.target
   layer.setStyle({
     fillOpacity: 0.2
   })
 });
-        marker5.on('click', function(event) {
+        marker3.on('click', function(event) {
           myMap.fitBounds(event.target.getBounds());
         })
       }
   })
  
   var overlayMaps = {
+    "Austin Map": map,
     "Austin Boundary": boundary,
     "Austin Zipcodes": zipcode
   }
 
   L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(myMap);
+})
 })
 })
