@@ -18,7 +18,7 @@ def index():
 app.route('/templates/aus_map.html')
 def show_map():
 
-    return send_file('templates/aus_map.html')
+    return render_template("aus_map.html")
 
 app.route('/grabtweets')
 def grabtweets():
@@ -39,22 +39,22 @@ def grabtweets():
 app.route('/templates/tweets.html')
 def show_tweets():
 
-    return send_file('templates/tweets.html')
+    return render_template("tweets.html")
 
 
 app.route('/templates/entertainment.html')
 def show_ent():
 
-    return send_file('templates/entertainment.html')
+    return render_template("entertainment.html")
 
 
 app.route('/templates/boundary.html')
 def show_liq():
 
-    return send_file('templates/boundary.html')
+    return render_template("boundary.html")
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
 
 
