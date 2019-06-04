@@ -15,5 +15,8 @@ $('#liqBtn').click(function(){
 	$('#liq-modal').modal({show:true})
 });
 
+$('#tweetBtn').click(function(){
+	$('#tweet-modal').modal({show:true})
+});
 
 
