@@ -1,5 +1,5 @@
-boundaryURL = "https://raw.githubusercontent.com/qanhdang96/db/master/boundaries.geojson"
-zipcodeURL = "https://raw.githubusercontent.com/qanhdang96/db/master/zipcodes.geojson"
+boundaryURL = "https://raw.githubusercontent.com/qanhdang96/master/db/boundaries.geojson"
+zipcodeURL = "https://raw.githubusercontent.com/qanhdang96/master/db/zipcodes.geojson"
 
 
 var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?" +
