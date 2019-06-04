@@ -58,8 +58,8 @@ marker5.on('mouseout', function (event) {
   })
  
   var overlayMaps = {
-    "DC Boundary": boundary,
-    "DC Zipcodes": zipcode
+    "Austin Boundary": boundary,
+    "Austin Zipcodes": zipcode
   }
 
   L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(myMap);
