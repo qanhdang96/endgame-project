@@ -24,7 +24,7 @@ d3.json(boundaryURL, function(boundaryData) {
 
   var myMap = L.map("map", {
     center: [
-      38.9, -77
+      30.2672, -97.7431
     ],
     zoom: 11,
     layers: [streetmap, boundary]
