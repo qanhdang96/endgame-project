@@ -1,12 +1,15 @@
-boundaryURL = "https://raw.githubusercontent.com/qanhdang96/master/db/boundaries.geojson"
-zipcodeURL = "https://raw.githubusercontent.com/qanhdang96/master/db/zipcodes.geojson"
+boundaryURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/boundaries.geojson"
+zipcodeURL = "https://raw.githubusercontent.com/qanhdang96/endgame-project/master/db/zipcodes.geojson"
 
 
 var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?" +
-    "access_token=pk.eyJ1IjoicWFuaGRhbmc5NiIsImEiOiJjanZvaG5kdXcxeXk0NDN1aW85eXpqa3NnIn0.PdZBCbzVJ9iM-Au8hD_jsg");
-
+    "access_token=pk.eyJ1IjoicWFuaGRhbmc5NiIsImEiOiJjanZvaG5kdXcxeXk0NDN1aW85eXpqa3NnIn0.PdZBCbzVJ9iM-Au8hD_jsg",
+    {
+            attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+            maxZoom: 18,
+            id: "mapbox.streets"});
 var baseMaps = {
-  "Street Map": streetmap,
+  "Street Map": streetmap
 };
 
 d3.json(boundaryURL, function(boundaryData) {
@@ -58,8 +61,8 @@ marker5.on('mouseout', function (event) {
   })
  
   var overlayMaps = {
-    "Austin Boundary": boundary,
-    "Austin Zipcodes": zipcode
+    "DC Boundary": boundary,
+    "DC Zipcodes": zipcode
   }
 
   L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(myMap);
