@@ -41,7 +41,7 @@
 
 header {
     grid-area: header;
-    background: url('../css/images/header4.jpg') center no-repeat;
+    background: url('../css/images/header.jpg') center no-repeat;
     background-size: cover;
 }
 
@@ -114,34 +114,23 @@ header {
     grid-area: map;
 }
 
-.sports {
-    grid-area: sports;
-}
-
-.sports-info {
-    grid-area: sports-info;
-    align-self: flex-start;
-    margin-left: 20px;
-}
-
 .tweets {
     grid-area: tweets;
 }
 
-.shots {
+.crimes {
     grid-area: shots;
 }
 
-article {
+.article {
     display: grid;
     grid-template-columns: 1.7fr 0.5fr 1.7fr;
     grid-gap: 15px;
     grid-template-areas:
     "intro intro intro"
     "map-info map map"
-    "sports sports sports-info"
     "tweets tweets tweets"
-    "shots shots shots";
+    "crimes crimes crimes";
 }
 
 /* MEDIA QUERY LAYOUT------------------------------------------------ */
@@ -214,10 +203,8 @@ article {
         "intro"
         "map-info"
         "map"
-        "sports-info"
-        "sports"
         "tweets"
-        "shots";
+        "crimes";
     }
 }
 
@@ -254,13 +241,13 @@ article {
     /* max-width: 320px; */
 }
 
-.menu li a, #mapsBtn, #sportsBtn, #entBtn, #liqBtn {
+.menu li a, #mapsBtn, #entBtn, #liqBtn {
     font-weight: bold;
     font-size: 20px;
     text-decoration: none;
     /* text-shadow: 0.5px 1px 1px rgb(15, 4, 165); */
     color: rgb(251, 250, 252);
-    background: rgba(18, 113, 245, 0.76);
+    background: rgba(252, 81, 218, 0.76);
     border-radius: 5px;
     padding: 0 5px;
     margin: 0 15px;
@@ -269,14 +256,14 @@ article {
 
 }
 
-.menu li a:hover, #mapsBtn:hover, #sportsBtn:hover, #entBtn:hover, #liqBtn:hover {
-    background: rgba(240, 58, 58, 0.705);
+.menu li a:hover, #mapsBtn:hover, #entBtn:hover, #liqBtn:hover {
+    background: rgba(110, 12, 248, 0.705);
     /* cursor: pointer; */
 }
 
 /* MAIN------------------------------------------------ */
 
-#mapsBtn, #sportsBtn, #entBtn, #liqBtn {
+#mapsBtn, #entBtn, #liqBtn {
     margin-top: 12px;
 }
 
@@ -310,6 +297,6 @@ article {
     -webkit-overflow-scrolling: touch;
 }
 
-.map-info, .map, .sports-info, .sports, .tweets, .shots {
+.map-info, .map, .tweets, .crimes {
     padding-bottom: 50px;
 }
