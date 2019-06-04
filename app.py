@@ -8,19 +8,19 @@ app = Flask(__name__)
 conn = "mongodb://localhost:27017/endgame_project"
 client = pymongo.MongoClient(conn)
 
-app.route('/')
+@app.route('/')
 def index():
 
     return render_template("index.html")
 
 
 #function to render aus_maps in the index.html
-app.route('/templates/aus_map.html')
+@app.route('/templates/aus_map.html')
 def show_map():
 
     return render_template("aus_map.html")
 
-app.route('/grabtweets')
+@app.route('/grabtweets')
 def grabtweets():
     import time
     from nightlifetweets import getTweets
@@ -36,19 +36,19 @@ def grabtweets():
     return jsonify(tweets)
 
 
-app.route('/templates/tweets.html')
+@app.route('/templates/tweets.html')
 def show_tweets():
 
     return render_template("tweets.html")
 
 
-app.route('/templates/entertainment.html')
+@app.route('/templates/entertainment.html')
 def show_ent():
 
     return render_template("entertainment.html")
 
 
-app.route('/templates/boundary.html')
+@app.route('/templates/boundary.html')
 def show_liq():
 
     return render_template("boundary.html")
