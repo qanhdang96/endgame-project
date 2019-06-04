@@ -1,8 +1,8 @@
-boundaryURL = "https://raw.githubusercontent.com/qanhdang96/db/master/boundaries.geojson"
-zipcodesURL = "https://raw.githubusercontent.com/qanhdang96/db/master/zipcodes.geojson"
-NightclubURL = "https://raw.githubusercontent.com/qanhdang96/db/master/pub_point.geojson"
-museumURL = "https://raw.githubusercontent.com/qanhdang96/db/master/museum_point.geojson"
-theatreURL = "https://raw.githubusercontent.com/qanhdang96/db/master/theatres.geojson"
+boundaryURL = "https://raw.githubusercontent.com/qanhdang96/master/db/boundaries.geojson"
+zipcodesURL = "https://raw.githubusercontent.com/qanhdang96/master/db/zipcodes.geojson"
+NightclubURL = "https://raw.githubusercontent.com/qanhdang96/master/db/pub_point.geojson"
+museumURL = "https://raw.githubusercontent.com/qanhdang96/master/db/museum_point.geojson"
+theatreURL = "https://raw.githubusercontent.com/qanhdang96/master/db/theatres.geojson"
 
 var streetmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?" +
     "access_token=pk.eyJ1IjoicWFuaGRhbmc5NiIsImEiOiJjanZvaG5kdXcxeXk0NDN1aW85eXpqa3NnIn0.PdZBCbzVJ9iM-Au8hD_jsg");
