@@ -5,16 +5,28 @@
         <title>Austin Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
+        <!-- Boostrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-        <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/components/ad.min.css"> -->
-        <link href="https://fonts.googleapis.com/css?family=Catamaran:500,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Monoton|Poppins&display=swap" rel="stylesheet">
+
+        <!-- MapBox JS -->
+        <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
+
+        <!-- D3 JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
+        <!-- Plotly JS-->
+
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        <!-- Our CSS -->
         <link rel="stylesheet" type="text/css" media="screen" href="../static/css/styles.css"/>
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/components/api.min.js"></script> -->
+        
         
     </head>
 
@@ -43,18 +55,18 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#map">Austin Map</a></li>
                         <li><a href="#bars">Night Bars</a></li>
+                        <li><a href="#crimes">Crimes</a></li>
                         
                     </ul>
                 </div>
             </aside>
-
             <article>
                 <div class="intro">
-                    <h2>Welcome to Austin, Austin City Limits!</h2>
+                    <h2>WELCOME TO AUSTIN - AUSTIN CITY LIMITS !</h2>
                     <p>Austin, the Texas state capital and the Travis County seat, is fueled by an entrepreneurial attitude that has resulted in the city's placement at the top of numerous business and cultural lists. Austin is known for its quality of life, which enables companies to attract and retain the very best talent from around the world. Its good jobs, easy living, excellent health care facilities, and low crime rate are a few of the reasons that Men's Journal ranked Austin the fifth best place to live in America in June 2004. We invite you to discover some of the amazing features of Austin through this website!</p>
                 </div>
                 <div class="map-info">
-                    <h2>Austin Weather</h2>
+                    <h2>AUSTIN WEATHER</h2>
                     <p>Austin, Texas has a subtropical humid climate.  Summers are hot and temperatures frequently average 90°F, but Austinites have learned to enjoy the hot weather through relaxing dips in the city’s many natural swimming pools and of course, the AC.  Depending on the winds, cloud cover, and other conditions, nighttime summer temperatures can sometimes drop into the 50s.</p>
                     
                 </div>
@@ -68,24 +80,10 @@
                         <a href="#map" class="btn" id="mapsBtn">Expand</a>
                     </div>    
                 </div>
-                <div id="sport" class="sports">
-                    <div class="iframeContainer">
-                        <div id="parent" class="embed-responsive embed-responsive-16by9">
-                            <iframe id="sportgraph" class="embed-responsive-item" src="{{ url_for('show_sports') }}" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="buttons-under">
-                        <div>
-                            <a href="#sport" class="btn" id="sportsBtn">Expand</a>
-                        </div>
-                        <div>
-                            <a href="#sport" class="btn" id="entBtn">Map</a>
-                        </div>
-                    </div>
-                </div>
+                
          
                 <div id="bars" class="tweets">
-                    <h3>Young Austinies love 6th street.</h3>
+                    <h3>Young Austinites Love 6th Street </h3>
                     <p>Culture collides on the wild streets of Texas' hippest city. Whether you want to rub elbows with political big wigs at Cloak Room or party with hipsters on Rainey Street, Austin has a haunt for you. (Best Bars in America)</p>
                     <div class="iframeContainer tweetsframe">
                         <div class="embed-responsive embed-responsive-21by9 iframe-parent">
@@ -97,36 +95,10 @@
                     </div>   
                 </div>
             </article>
-
-            <footer>
-                <p>All rights reserved</p>
-            </footer>
                             
         </div>
 
-        <!-- UGLY code goes here. should be turned into a modal rendering function.. one day -->
         <!-- MODALS-------------------------- -->
-        <div id="sports-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog sport modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span>Capitals and Texas</span>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="embed-responsive embed-responsive-16by9">
-                        <!-- <iframe src="{{ url_for('show_sports') }}" style="zoom:1" width="760" height='400' frameborder="0"></iframe> -->
-                        <iframe src="{{ url_for('show_sports') }}" style="zoom:1" frameborder="2"></iframe>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div id="maps-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog map modal-lg modal-dialog-centered">
@@ -173,7 +145,6 @@
                 </div>
             </div>
         </div>
-
         <div id="liq-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog liq modal-lg modal-dialog-centered">
                 <div class="modal-content">
@@ -194,6 +165,24 @@
                 </div>
             </div>
         </div>
+        <div class="footer">
+                <div>
+                <p><center>UT Austin Data Bootcamp 2019<br>Team Members: Jenny Dang, Linh Duong & Quynh Tran </center></p>
+                </div>
+        </div>        
 
+        <!-- API Key -->
+        <script type="text/javascript" src="../static/js/config.js"></script>
+
+        <!--- Script for Tool Tip-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
+        <!-- JS FILE -->
+        <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/entertainment.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/leaflet.extra-markers.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/my-icons.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/tweets.js') }}"></script>
     </body>
 </html>

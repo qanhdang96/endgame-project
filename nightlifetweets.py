@@ -1,19 +1,14 @@
 import pandas as pd
 import tweepy
-from config import consumer_key, consumer_secret, access_token, access_token_secret
+from tweepy import OAuthHandler
+import config
+from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 import os
-
-
-# consumer_key = os.environ.get('consumer_key')
-# consumer_secret = os.environ.get('consumer_secret')
-# access_token = os.environ.get('access_token')
-# access_token_secret = os.environ.get('access_token_secret')
-
 
 def getTweets():
     
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_token_secret)
+    auth = tweepy.OAuthHandler(config.CONSUMER_KEY, config.CONSUMER_SECRET)
+    auth.set_access_token(config.ACCESS_TOKEN, config.ACCESS_TOKEN_SECRET)
     api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
     target_terms = ["@ElysiumAustin", "@BarbarellaATX", "@VAustinTX",
@@ -40,7 +35,7 @@ def getTweets():
                 tweet_text.append(tweet['text'])
                 date.append(tweet['created_at'])
                 oldest_tweet = tweet["id"] - 1
-                # print(tweet)
+            print(tweet)
 
 
     nightlife_df=pd.DataFrame({"Bar": bar,
