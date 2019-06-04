@@ -6,7 +6,7 @@
 
 ## Features:
 Our fisnished project help people from other places getting to know more about city of Austin. 
-Provide up-to-date times, weather, governement news, and entertainment locations, such as bars, museum and theaters. 
+Provide up-to-date times, weather, Austin maps, governement news, and entertainment locations, such as bars, museum and theaters. 
 
 ## Dependencies:
 
@@ -19,6 +19,8 @@ Provide up-to-date times, weather, governement news, and entertainment locations
 ## Usage:
 
 1. Open site 
+2. Click on button 
+3. Enjoy the visualization
 
 ## Deployment:
 
