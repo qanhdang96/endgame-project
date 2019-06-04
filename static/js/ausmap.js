@@ -1,4 +1,4 @@
-boundaryURL = "https://raw.githubusercontent.com/qanhdang96/master/db/boundaries.geojson"
+boundaryURL = "https://raw.githubusercontent.com/blackmad/neighborhoods/master/austin.geojson"
 zipcodeURL = "https://raw.githubusercontent.com/qanhdang96/master/db/zipcodes.geojson"
 
 
