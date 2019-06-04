@@ -16,11 +16,10 @@ def getTweets():
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
-    target_terms = ["@Codmother", "@rocknrollhotel", "@NelliesDC",
-                   "@WhiskeysDC", "@Whitlows","@thepugdc", "@WhatsUpAtTown",
-                   "@dontitova", "@ATownBallston", "@18thSTLounge", "@TheBrixtonDC",
-                   "@provisiondc", "@SollysDC", "@VelvetLoungeDC", "@DachaDC", "@TheWonderlandDC",
-                   "@930Club"]
+    target_terms = ["@ElysiumAustin", "@BarbarellaATX", "@VAustinTX",
+                   "@KingdomAustin", "@yardbar","@ClubVulcanATX", "@CliveBarATX",
+                   "@IrenesATX", "@MaggieMaesATX", "@TheTownsendATX", "@PubCrawlerATX",
+                   "@ShakespearesATX", "@ATX_Nightlife", "@NightCultureATX", "@ElephantRoomATX", "@Austin6thStreet"]
 
     bar = []
     tweet_text = []
