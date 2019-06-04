@@ -79,25 +79,7 @@
                         <a href="#map" class="btn" id="mapsBtn">Expand</a>
                     </div>    
                 </div>
-                
-         
-                <div id="bars" class="tweets">
-                    <h3>Young Austinites Love 6th Street </h3>
-                    <p>Culture collides on the wild streets of Texas' hippest city. Whether you want to rub elbows with political big wigs at Cloak Room or party with hipsters on Rainey Street, Austin has a haunt for you. (Best Bars in America)</p>
-                    <div class="iframeContainer tweetsframe">
-                        <div class="embed-responsive embed-responsive-21by9 iframe-parent">
-                            <iframe class="embed-responsive-item iframe-child" src="{{ url_for('show_tweets') }}" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="#bars" class="btn" id="liqBtn">Map</a>
-                    </div>   
-                </div>
-            </article>
-                            
-        </div>
-
-        <!-- MODALS-------------------------- -->
+                <!-- MODALS-------------------------- -->
 
         <div id="maps-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog map modal-lg modal-dialog-centered">
@@ -164,6 +146,24 @@
                 </div>
             </div>
         </div>
+         
+                <div id="bars" class="tweets">
+                    <h3>Young Austinites Love 6th Street </h3>
+                    <p>Culture collides on the wild streets of Texas' hippest city. Whether you want to rub elbows with political big wigs at Cloak Room or party with hipsters on Rainey Street, Austin has a haunt for you. (Best Bars in America)</p>
+                    <div class="iframeContainer tweetsframe">
+                        <div class="embed-responsive embed-responsive-21by9 iframe-parent">
+                            <iframe class="embed-responsive-item iframe-child" src="{{ url_for('show_ent') }}" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#bars" class="btn" id="liqBtn">Map</a>
+                    </div>   
+                </div>
+            </article>
+                            
+        </div>
+
+        
         <div class="footer">
                 <div>
                 <p><center>UT Austin Data Bootcamp 2019<br>Team Members: Jenny Dang, Linh Duong & Quynh Tran </center></p>
