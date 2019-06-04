@@ -49,7 +49,7 @@ def show_ent():
 
 
 @app.route('/templates/boundary.html')
-def show_boundary():
+def show_liq():
 
     return send_file("boundary.html")
 
