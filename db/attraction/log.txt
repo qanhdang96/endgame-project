@@ -1,0 +1,6 @@
+ERROR 1: Attempt to create csv layer (file) against a non-directory datasource.
+ERROR 1: Terminating translation prematurely after failed
+translation from sql statement.
+ERROR 1: Attempt to create csv layer (file) against a non-directory datasource.
+ERROR 1: Terminating translation prematurely after failed
+translation from sql statement.
