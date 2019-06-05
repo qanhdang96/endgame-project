@@ -1,6 +1,4 @@
 from flask import Flask, render_template, redirect, send_file, jsonify
-from functions import getRidOfId
-import os
 
 app = Flask(__name__)
 
