@@ -24,7 +24,7 @@ Provide up-to-date times, weather, Austin maps, governement news, and entertainm
 * GeoJSON
 * Leaflet 
 * Mapbox
-* MySQL
+* CSV
 * Tableau
 
 ## Usage:
