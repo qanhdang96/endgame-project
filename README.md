@@ -18,19 +18,20 @@ Provide up-to-date times, weather, Austin maps, governement news, and entertainm
 
 ## Dependencies:
 
-* Python Flask
-* Restful API 
+* Python Flask 
 * HTML/CSS
 * JavaScript
 * GeoJSON
 * Leaflet 
 * Mapbox
+* CSV
 * MySQL
+* Tableau
 
 ## Usage:
 
 1. Open site 
-2. Click on button and explore maps of Austin 
+2. Click on button to explore maps of Austin and places to go 
 3. Enjoy the visualization
 
 ## Deployment:
